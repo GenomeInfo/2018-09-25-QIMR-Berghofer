@@ -42,7 +42,7 @@
 
         {% if site.kind == "lesson" %}
 	{% comment %} Show setup instructions. {% endcomment %}
-  {% comment %}<li><a href="{{ page.root }}{% link setup.md %}">Setup</a></li> {% endcomment %}
+        <li><a href="{{ page.root }}{% link setup.md %}">Setup</a></li>
 
         {% comment %} Show lesson episodes for lessons. {% endcomment %}
         <li class="dropdown">
@@ -56,6 +56,9 @@
           </ul>
         </li>
 	{% endif %}
+
+        {% comment %} Show reference for the workshop. {% endcomment %}
+        <li><a href="{{ page.root }}{% link reference.md %}">Reference</a></li>
 
 	{% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
 	{% if site.kind == "lesson" %}
