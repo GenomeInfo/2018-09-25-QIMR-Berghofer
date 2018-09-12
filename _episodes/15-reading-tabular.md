@@ -35,26 +35,17 @@ print(data)
 ~~~
 {: .python}
 ~~~
-       country  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
-0    Australia     10039.59564     10949.64959     12217.22686
-1  New Zealand     10556.57566     12247.39532     13175.67800
+       country  gdpPercap_1952       ...        gdpPercap_2002  gdpPercap_2007
+0    Australia     10039.59564       ...           30687.75473     34435.36744
+1  New Zealand     10556.57566       ...           23189.80135     25185.00911
 
-   gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
-0     14526.12465     16788.62948     18334.19751     19477.00928
-1     14463.91893     16046.03728     16233.71770     17632.41040
+[2 rows x 13 columns]
 
-   gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
-0     21888.88903     23424.76683     26997.93657     30687.75473
-1     19007.19129     18363.32494     21050.41377     23189.80135
-
-   gdpPercap_2007
-0     34435.36744
-1     25185.00911
 ~~~
 {: .output}
 
 *   The columns in a dataframe are the observed variables, and the rows are the observations.
-*   Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
+*   Pandas uses backslash `...` to show missing columns when output is too wide to fit the screen.
 
 > ## File Not Found
 >
