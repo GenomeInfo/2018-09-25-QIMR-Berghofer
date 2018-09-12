@@ -45,7 +45,7 @@ print(data)
 {: .output}
 
 *   The columns in a dataframe are the observed variables, and the rows are the observations.
-*   Pandas uses backslash `...` to show missing columns when output is too wide to fit the screen.
+*   Pandas uses ellipsis `...` to show missing columns when output is too wide to fit the screen.
 
 > ## File Not Found
 >
