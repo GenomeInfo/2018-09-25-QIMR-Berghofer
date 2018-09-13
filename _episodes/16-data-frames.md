@@ -232,6 +232,13 @@ max      13450.401510    16361.876470    18965.055510
 > {: .python}
 >
 > Write an expression to find the Per Capita GDP of Serbia in 2007.
+> > ## Solution
+> > This could be done with `df.loc`:
+> > ~~~
+> > print(df.loc['Serbia', 'gdpPercap_2007'])
+> > ~~~
+> >{: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Extent of Slicing
@@ -245,6 +252,36 @@ max      13450.401510    16361.876470    18965.055510
 > print(data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 > ~~~
 > {: .python}
+> > ## Solution
+> > No, They do not produce the same output
+> >
+> > ~~~
+> > print(data.iloc[0:2, 0:2])
+> > ~~~
+> >{: .python}
+> > ~~~
+> >          gdpPercap_1952  gdpPercap_1957
+> > country                                
+> > Albania     1601.056136     1942.284244
+> > Austria     6137.076492     8842.598030
+> > ~~~
+> >{: .output}
+> > ~~~
+> > print(data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+> > ~~~
+> >{: .python}
+> > ~~~
+> >          gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
+> > country                                                
+> > Albania     1601.056136     1942.284244     2312.888958
+> > Austria     6137.076492     8842.598030    10750.721110
+> > Belgium     8343.105127     9714.960623    10991.206760
+> > ~~~
+> >{: .output}
+> >
+> >
+> > Numerical slices present the first numbered index up to, but not including, the second index provided, just like slices of strings.  Named slices present the first up to and including the second index provided.
+> {: .solution}
 {: .challenge}
 
 > ## Reconstructing Data
@@ -260,6 +297,33 @@ max      13450.401510    16361.876470    18965.055510
 > fourth.to_csv('result.csv')
 > ~~~
 > {: .python}
+> > ## Solution
+> > ~~~
+> > first = pandas.read_csv('data/gapminder_all.csv', index_col='country')
+> > ~~~
+> >{: .python}
+> > This creates a new DataFrame named `first` and reads the contents of the file `data/gapminder_all.csv` into it, using the `country` column to index the values.
+> > ~~~
+> > second = first[first['continent'] == 'Americas']
+> > ~~~
+> >{: .python}
+> > This line makes a selection: only those rows of the DataFrame, `first`, for which the `‘continent’` column matches `‘Americas’` are extracted. Notice how the Boolean expression inside the brackets, `first['continent'] == 'Americas'`, is used to select only those rows where the expression is true. Try printing this expression! Can you print also its individual True/False elements? (hint: first assign the expression to a variable)
+> > ~~~
+> > third = second.drop('Puerto Rico')
+> > ~~~
+> >{: .python}
+> > This creates a new DataFrame named `third` which is a copy of `second`, but with the row indexed by the country `Puerto Rico` excluded or "dropped".  When using `DataFrame.drop`, there is an optional argument, `axis` that indicates whether you are dropping a row or a column.  If you do not provide it, the function presumes you want to drop a row.
+> > ~~~
+> > fourth = third.drop('continent', axis = 1)
+> > ~~~
+> >{: .python}
+> > This creates a new DataFrame names `fourth` which is a copy of `third`, but with the column indexed by the name `continent` excluded or "dropped".  Unlike the previous example, where the row was dropped, the `axis = 1` is required to indicate that a column should be dropped.
+> > ~~~
+> > fourth.to_csv('result.csv')
+> > ~~~
+> >{: .python}
+> > This writes the contents of the DataFrame `fourth` oout to a file named `result.csv`.  As no path was given, it will write the file to the current working directory.
+> {: .solution}
 {: .challenge}
 
 > ## Selecting Indices
@@ -273,6 +337,11 @@ max      13450.401510    16361.876470    18965.055510
 > print(data.idxmax())
 > ~~~
 > {: .python}
+> > ## Solution
+> > `data.idxmin` returns the index of the each of the rows that has the lowest value in each of the colums of the DataFrame `data`.  `data.idxmax` returns the index of the each of the rows that has the highest value in each of the colums of the DataFrame `data`.  
+> >   
+> > Much like the `data.drop` that we used earlier, unless explicitly stated, these methods presume you want the index of the row with the lowest or highest value.  Similarly, you could get the index of the column with the lowest or highest values for each of the columns by using `print(data.idxmin(axis = 1))` or `print(data.idxman(axis = 1))`, respectively.
+> {: .solution}
 {: .challenge}
 
 > ## Practice with Selection
@@ -284,8 +353,37 @@ max      13450.401510    16361.876470    18965.055510
 > 2.  GDP per capita for Denmark for all years.
 > 3.  GDP per capita for all countries for years *after* 1985.
 > 4.  GDP per capita for each country in 2007 as a multiple of 
->     GDP per capita for that country in 1952.
+>     GDP per capita for that country in 1952.  
+>
+> > ## Solution
+> > GDP per capita for all countries in 1982.
+> > ~~~
+> > data.loc[:, 'gdpPercap_1982']
+> > ~~~
+> >{: .python}
+> ><br>
+> > GDP per capita for Denmark for all years.
+> > ~~~
+> > data.loc['Denmark', :]
+> > ~~~
+> >{: .python}
+> ><br>
+> > GDP per capita for all countries for years *after* 1985.
+> > ~~~
+> > data.loc[:, 'gdpPercap_1985':]
+> > ~~~
+> >{: .python}
+> > Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named `gdpPercap_1985` actually exists. This is useful if new columns are added to the CSV file later.
+> ><br>
+> > GDP per capita for each country in 2007 as a multiple of  
+> > GDP per capita for that country in 1952.  
+> > ~~~
+> > data.loc[:, 'gdpPercap_2007'] / data[:, 'gdpPercap_1952']
+> > ~~~
+> >{: .python}
+> {: .solution}
 {: .challenge}
+
 
 > ## Interpretation
 >
