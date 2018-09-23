@@ -209,6 +209,15 @@ result of print is None
 > radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
 > ~~~
 > {: .python}
+> > ## Solution
+> > 1. `1.1 * radiance = 1.1`
+> > 2. `1.1 - 0.5 = 0.6`
+> > 3. `min(randiance, 0.6) = 0.6`
+> > 4. `2.0 + 0.6 = 2.6`
+> > 5. `max(2.1, 2.6) = 2.6`
+> >
+> > At the end, `radiance = 2.6`
+> {: .solution}
 {: .challenge}
 
 > ## Spot the Difference
@@ -224,11 +233,39 @@ result of print is None
 > print(max(len(rich), len(poor)))
 > ~~~
 > {: .python}
+> > ## Solution
+> > ~~~
+> > print(max(rich, poor))
+> > ~~~
+> > {: .python}
+> > ~~~
+> > tin
+> > ~~~
+> > {: .output}
+> > ~~~
+> > print(max(len(rich), len(poor)))
+> > ~~~
+> > {: .python}
+> > ~~~
+> > 4
+> > ~~~
+> > {: .output}
+> >   
+> > It throws a TypeError. The command is trying to run `max(4, 'tin')` and you can't compare
+> >    a string and an integer
+> {: .solution}
 {: .challenge}
 
 > ## Why Not?
 >
 > Why don't `max` and `min` return `None` when they are given no arguments?
+>
+> > ## Solution
+> > `max` and `min` return TypeErrors in this case because the correct number of parameters
+> > was not supplied. If it just returned `None`, the error would be much harder to trace as it
+> > would likely be stored into a variable and used later in the program, only to likely throw
+> > a runtime error.
+> {: .solution}
 {: .challenge}
 
 > ## Last Character of a String
