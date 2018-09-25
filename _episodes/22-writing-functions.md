@@ -103,7 +103,7 @@ print('average of actual values:', a)
 ~~~
 {: .python}
 ~~~
-2.6666666666666665
+average of actual values: 2.6666666666666665
 ~~~
 {: .output}
 
@@ -112,11 +112,11 @@ print('average of empty list:', average([]))
 ~~~
 {: .python}
 ~~~
-None
+average of empty list: None
 ~~~
 {: .output}
 
-*   Remember: [every function returns something]({{ page.root }}/04-built-in/).
+*   Remember: [every function returns something]({{ page.root }}/12-built-in/).
 *   A function that doesn't explicitly `return` a value automatically returns `None`.
 
 ~~~
@@ -169,6 +169,20 @@ result of call is: None
 >
 > print('calling', report, 22.5)
 > ~~~
+> {: .python}
+> > ## Solution
+> >
+> > ~~~
+> > calling <function report at 0x7fd128ff1bf8> 22.5
+> > ~~~ 
+> > {: .output}
+> >
+> > A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+> > ~~~
+> > print("calling")
+> > report(22.5)
+> > ~~~
+> {: .solution}
 {: .challenge}
 
 > ## Order of Operations
@@ -189,6 +203,30 @@ result of call is: None
 > {: .output}
 >
 > Explain why the two lines of output appeared in the order they did.
+> > ## Solution
+> > 
+> > The first line called our previously defined function, `print_date()`.  We passed it the values `1871`, `3`, and `19`.  When our function ran, it printend the expected output:
+> > ~~~
+> result = print_date(1871, 3, 19)
+> > ~~~
+> > {: .python}
+> >
+> > ~~~
+> > 1871/3/19
+> > ~~~
+> > {: .output}
+> > The function has no return value so the implicit `None` was returned and assigned to our newly defined variable, `result`.
+> >  
+> > Next, we print our string and the value thati s stored in the variable, `result`, which is `None`:
+> > ~~~
+> > print('result of call is:', result)
+> > ~~~
+> > {: .python}
+> > ~~~
+> > result of call is: None
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Encapsulation
@@ -205,6 +243,11 @@ result of call is: None
 >     return ____
 > ~~~
 > {: .python}
+> > ## Solution
+> > ~~~
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Find the First
@@ -220,11 +263,18 @@ result of call is: None
 >             return ____
 > ~~~
 > {: .python}
+> > ## Solution
+> > ~~~
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Calling by Name
 >
-> What does this short program print?
+> 1.  What does this short program print?
+> 2.  When have you seen a function call like this before?
+> 3.  When and why is it useful to call functions this way?
 >
 > ~~~
 > def print_date(year, month, day):
@@ -234,10 +284,21 @@ result of call is: None
 > print_date(day=1, month=2, year=2003)
 > ~~~
 > {: .python}
->
-> 1.  When have you seen a function call like this before?
-> 2.  When and why is it useful to call functions this way?
-> {: .python}
+> > ## Solution
+> > 1.    
+> >     ~~~
+> >     2003/2/1
+> >     ~~~
+> >     {: .output}    
+> >     
+> > 2.  We used this style of fuction call when we wanted to set the index column while calling pandas.read_csv() in the [data frames episode]({{ page.root }}/16-data-frames/). 
+> >     ~~~
+> >     data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+> >     ~~~
+> >     {: .python}
+> > 3.  If a function has optional paramaters, this calling method lets you pass only the options you need.
+> >
+> {: .solution}
 {: .challenge}
 
 > ## Encapsulate of If/Print Block
@@ -252,19 +313,19 @@ result of call is: None
 >
 >     # simulating the mass of a chicken egg
 >     # the (random) mass will be 70 +/- 20 grams
->     mass=70+20.0*(2.0*random.random()-1.0)
+>     mass = 70 + 20.0 * (2.0*random. random() - 1.0)
 >
 >     print(mass)
 >    
 >     #egg sizing machinery prints a label
->     if(mass>=85):
->        print("jumbo")
->     elif(mass>=70):
->        print("large")
->     elif(mass<70 and mass>=55):
->        print("medium")
+>     if(mass >= 85):
+>         print("jumbo")
+>     elif(mass >= 70):
+>         print("large")
+>     elif(mass < 70 and mass >= 55):
+>         print("medium")
 >     else:
->        print("small")
+>         print("small")
 > ~~~
 > {: .python}
 >
@@ -276,19 +337,53 @@ result of call is: None
 >  import random
 >  for i in range(10):
 >
->     # simulating the mass of a chicken egg
->     # the (random) mass will be 70 +/- 20 grams
->     mass=70+20.0*(2.0*random.random()-1.0)
+>      # simulating the mass of a chicken egg
+>      # the (random) mass will be 70 +/- 20 grams
+>      mass = 70 + 20.0 * (2.0 * random.random() - 1.0)
 >
->     print(mass,print_egg_label(mass))    
+>      print(mass, print_egg_label(mass))
 >
 > ~~~
 > {: .python}
 >
 >
-> 1. Create a function definition for `print_egg_label()` that will work with the revised program above.  Note, the function's return value will be signifigant. Sample output might be `71.23 large`.
+> 1. Create a function definition for `print_egg_label()` that will work with the revised program above.
 > 2.  A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `print_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
-> 
+>
+> > ## Solution
+> > 1.    
+> >     ~~~
+> >     def print_egg_label(mass):
+> >         #egg sizing machinery prints a label
+> >         if(mass >= 85):
+> >             return("jumbo")
+> >         elif(mass >= 70):
+> >             return("large")
+> >         elif(mass < 70 and mass >= 55):
+> >             return("medium")
+> >         else:
+> >             return("small")
+> >     ~~~
+> >     {: .python}
+> > 2.    
+> >     ~~~
+> >     def print_egg_label(mass):
+> >         #egg sizing machinery prints a label
+> >         if(mass > 90):
+> >             return("jumbo but might be dirty")
+> >         elif(mass >= 85):
+> >             return("jumbo")
+> >         elif(mass >= 70):
+> >             return("large")
+> >         elif(mass < 70 and mass >= 55):
+> >             return("medium")
+> >         elif(mass < 55 and mass >= 50):
+> >             return("small")
+> >         else:
+> >             return("small, too light, probably spoiled or broken")
+> >     ~~~
+> >     {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Encapsulating Data Analysis
@@ -305,26 +400,26 @@ result of call is: None
 >
 > 1. Complete the statements below to obtain the average GDP for Japan
 >    across the years reported for the 1980s.
->
-> ~~~ 
-> year = 1983
-> gdp_decade = 'gdpPercap_' + str(year // ____)
-> avg = (japan.ix[gdp_decade + ___] + japan.ix[gdp_decade + ___]) / 2
-> ~~~
-> {: .python}
+>     
+>     ~~~ 
+>     year = 1983
+>     gdp_decade = 'gdpPercap_' + str(year // ____)
+>     avg = (japan.ix[gdp_decade + ___] + japan.ix[gdp_decade + ___]) / 2
+>     ~~~
+>     {: .python}
 >
 > 2. Abstract the code above into a single function.
->
-> ~~~
-> def avg_gdp_in_decade(country, continent, year):
->     df = pd.read_csv('gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
->     ____
->     ____
->     ____
->     return avg
-> ~~~
-> {: .python}
->
+>    
+>     ~~~
+>     def avg_gdp_in_decade(country, continent, year):
+>         df = pd.read_csv('gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
+>         ____
+>         ____
+>         ____
+>         return avg
+>     ~~~
+>     {: .python}
+>     
 > 3. How would you generalize this function
 >    if you did not know beforehand which specific years occurred as columns in the data?
 >    For instance, what if we also had data from years ending in 1 and 9 for each decade?
@@ -335,41 +430,41 @@ result of call is: None
 > >
 > > 1. 
 > >
-> > ~~~ 
-> > year = 1983
-> > gdp_decade = 'gdpPercap_' + str(year // 10)
-> > avg = (japan.ix[gdp_decade + '2'] + japan.ix[gdp_decade + '7']) / 2
-> > ~~~
-> > {: .python}
-> >
-> > 2.
-> >
-> > ~~~
-> > def avg_gdp_in_decade(country, continent, year):
-> >     df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
-> >     c = df.ix[country]
+> >     ~~~ 
+> >     year = 1983
 > >     gdp_decade = 'gdpPercap_' + str(year // 10)
-> >     avg = (c.ix[gdp_decade + '2'] + c.ix[gdp_decade + '7'])/2
-> >     return avg
-> > ~~~
-> > {: .python}
+> >     avg = (japan.ix[gdp_decade + '2'] + japan.ix[gdp_decade + '7']) / 2
+> >     ~~~
+> >     {: .python}
+> >    
+> > 2. 
 > >
-> > 3. We need to loop over the reported years
-> >    to obtain the average for the relevant ones in the data.
+> >     ~~~ 
+> >     def avg_gdp_in_decade(country, continent, year):
+> >         df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
+> >         c = df.ix[country]
+> >         gdp_decade = 'gdpPercap_' + str(year // 10)
+> >         avg = (c.ix[gdp_decade + '2'] + c.ix[gdp_decade + '7'])/2
+> >         return avg
+> >     ~~~
+> >     {: .python}
 > >
-> > ~~~
-> > def avg_gdp_in_decade(country, continent, year):
-> >     df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
-> >     c = df.ix[country] 
-> >     gdp_decade = 'gdpPercap_' + str(year // 10)
-> >     total = 0.0
-> >     num_years = 0
-> >     for yr_header in c.index: # c's index contains reported years
-> >         if yr_header.startswith(gdp_decade):
-> >             total = total + c.ix[yr_header]
-> >             num_years = num_years + 1
-> >     return total/num_years
-> > ~~~
-> > {: .python}
+> > 3.  We need to loop over the reported years
+> >     to obtain the average for the relevant ones in the data.
+> >     
+> >     ~~~
+> >     def avg_gdp_in_decade(country, continent, year):
+> >         df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
+> >         c = df.ix[country] 
+> >         gdp_decade = 'gdpPercap_' + str(year // 10)
+> >         total = 0.0
+> >         num_years = 0
+> >         for yr_header in c.index: # c's index contains reported years
+> >             if yr_header.startswith(gdp_decade):
+> >                 total = total + c.ix[yr_header]
+> >                 num_years = num_years + 1
+> >         return total/num_years
+> >     ~~~
+> >     {: .python}
 > {: .solution}
 {: .challenge}
