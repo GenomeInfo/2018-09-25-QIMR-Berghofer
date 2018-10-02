@@ -193,7 +193,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </p>
 
 <p id="collaboration">
-  <strong>Collaboration</strong>: We will be using an interactive etherpad for discussion and examples at <a href="https://genomeinfo.github.io/2018-10-03-QIMR-Berghofer/">https://genomeinfo.github.io/2018-10-03-QIMR-Berghofer</a> 
+  <strong>Collaboration</strong>: We will be using an interactive etherpad for discussion and examples at <a href="https://genomeinfo.github.io/2018-10-03-QIMR-Berghofer/">http://bionode06.adqimr.ad.lan:9001/p/SWC_2018_Q3</a> 
 </p>
   
 <hr/>
