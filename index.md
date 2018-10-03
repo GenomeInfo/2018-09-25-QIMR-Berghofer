@@ -11,7 +11,7 @@ humantime: "9:00 am - 4:30 pm"    # human-readable times for the workshop (e.g.,
 startdate: 2018-10-03      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2018-10-04        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Conrad Leonard", "Scott Wood"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: []     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+helper: ["Xiaping Lin"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["conrad.leonard@qimrberghofer.edu.au"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:             # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
@@ -139,7 +139,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
     </li>
     <li>
       A X-Server on their laptop.  For Linux laptops, this will likely already be installed.  Windows users may need to submit a ticket to <a href='https://staff.qimr.edu.au/form/itjob'>ITS</a> requesting a copy of XMing be installed.  Mac users may need to submit a ticket to <a href='https://staff.qimr.edu.au/form/itjob'>ITS</a> requesting a copy of XQuartz be installed.
-    </li>  
+    </li> 
   </ul>
 </p>
 
@@ -192,6 +192,10 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   for more information.
 </p>
 
+<p id="collaboration">
+  <strong>Collaboration</strong>: We will be using an interactive etherpad for discussion and examples at <a href="http://bionode06.adqimr.ad.lan:9001/p/SWC_2018_Q3">http://bionode06.adqimr.ad.lan:9001/p/SWC_2018_Q3</a> 
+</p>
+  
 <hr/>
 
 {% comment %} 
