@@ -40,7 +40,7 @@ keypoints:
 def print_greeting():
     print('Hello!')
 ~~~
-{: .python}
+{: .language-python}
 
 ## Defining a function does not run it.
 
@@ -51,7 +51,7 @@ def print_greeting():
 ~~~
 print_greeting()
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Hello!
 ~~~
@@ -71,7 +71,7 @@ def print_date(year, month, day):
 
 print_date(1871, 3, 19)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1871/3/19
 ~~~
@@ -95,13 +95,13 @@ def average(values):
         return None
     return sum(values) / len(values)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 a = average([1, 3, 4])
 print('average of actual values:', a)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 average of actual values: 2.6666666666666665
 ~~~
@@ -110,7 +110,7 @@ average of actual values: 2.6666666666666665
 ~~~
 print('average of empty list:', average([]))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 average of empty list: None
 ~~~
@@ -123,7 +123,7 @@ average of empty list: None
 result = print_date(1871, 3, 19)
 print('result of call is:', result)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1871/3/19
 result of call is: None
@@ -145,7 +145,7 @@ result of call is: None
 >    print("But at least python tells us about them!")
 >   print("So they are usually not too hard to fix.")
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -155,7 +155,7 @@ result of call is: None
 > >   print("But at least Python tells us about them!")
 > >   print("So they are usually not too hard to fix.")
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -169,7 +169,7 @@ result of call is: None
 >
 > print('calling', report, 22.5)
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > >
 > > ~~~
@@ -193,7 +193,7 @@ result of call is: None
 > result = print_date(1871, 3, 19)
 > print('result of call is:', result)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > printed:
 > ~~~
@@ -209,7 +209,7 @@ result of call is: None
 > > ~~~
 > result = print_date(1871, 3, 19)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > 1871/3/19
@@ -221,7 +221,7 @@ result of call is: None
 > > ~~~
 > > print('result of call is:', result)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > ~~~
 > > result of call is: None
 > > ~~~
@@ -242,11 +242,11 @@ result of call is: None
 >     data = ____
 >     return ____
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > ~~~
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -262,11 +262,11 @@ result of call is: None
 >         if ____:
 >             return ____
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > ~~~
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -283,7 +283,7 @@ result of call is: None
 >
 > print_date(day=1, month=2, year=2003)
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > 1.    
 > >     ~~~
@@ -295,7 +295,7 @@ result of call is: None
 > >     ~~~
 > >     data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > > 3.  If a function has optional paramaters, this calling method lets you pass only the options you need.
 > >
 > {: .solution}
@@ -327,7 +327,7 @@ result of call is: None
 >     else:
 >         print("small")
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 >
 > The simplified program  follows.  What function definition will make it functional?
@@ -344,7 +344,7 @@ result of call is: None
 >      print(mass, print_egg_label(mass))
 >
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 >
 > 1. Create a function definition for `print_egg_label()` that will work with the revised program above.
@@ -364,7 +364,7 @@ result of call is: None
 > >         else:
 > >             return("small")
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > > 2.    
 > >     ~~~
 > >     def print_egg_label(mass):
@@ -382,7 +382,7 @@ result of call is: None
 > >         else:
 > >             return("small, too light, probably spoiled or broken")
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -396,7 +396,7 @@ result of call is: None
 > df = pandas.read_csv('gapminder_gdp_asia.csv', index_col=0)
 > japan = df.ix['Japan']
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1. Complete the statements below to obtain the average GDP for Japan
 >    across the years reported for the 1980s.
@@ -406,7 +406,7 @@ result of call is: None
 >     gdp_decade = 'gdpPercap_' + str(year // ____)
 >     avg = (japan.ix[gdp_decade + ___] + japan.ix[gdp_decade + ___]) / 2
 >     ~~~
->     {: .python}
+>     {: .language-python}
 >
 > 2. Abstract the code above into a single function.
 >    
@@ -418,7 +418,7 @@ result of call is: None
 >         ____
 >         return avg
 >     ~~~
->     {: .python}
+>     {: .language-python}
 >     
 > 3. How would you generalize this function
 >    if you did not know beforehand which specific years occurred as columns in the data?
@@ -435,7 +435,7 @@ result of call is: None
 > >     gdp_decade = 'gdpPercap_' + str(year // 10)
 > >     avg = (japan.ix[gdp_decade + '2'] + japan.ix[gdp_decade + '7']) / 2
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > >    
 > > 2. 
 > >
@@ -447,7 +447,7 @@ result of call is: None
 > >         avg = (c.ix[gdp_decade + '2'] + c.ix[gdp_decade + '7'])/2
 > >         return avg
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > >
 > > 3.  We need to loop over the reported years
 > >     to obtain the average for the relevant ones in the data.
@@ -465,6 +465,6 @@ result of call is: None
 > >                 num_years = num_years + 1
 > >         return total/num_years
 > >     ~~~
-> >     {: .python}
+> >     {: .language-python}
 > {: .solution}
 {: .challenge}

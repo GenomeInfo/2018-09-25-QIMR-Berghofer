@@ -49,7 +49,7 @@ def calc_bulk_density(mass, volume):
     assert volume > 0
     return mass / volume
 ~~~
-{: .python}
+{: .language-python}
 
 If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
 
@@ -70,7 +70,7 @@ def average(values):
 
 help(average)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Help on function average in module __main__:
 
@@ -91,7 +91,7 @@ average(values)
 >
 > Blank lines are allowed."""
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .callout}
 
 > ## What Will Be Shown?
@@ -118,7 +118,7 @@ average(values)
 >     # Report.
 >     return highest
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Document This
@@ -134,7 +134,7 @@ average(values)
 >     values.sort()
 >     return values[1]
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Clean Up This Code
@@ -165,7 +165,7 @@ average(values)
 >     print(s)
 >     i += 1
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -197,6 +197,6 @@ average(values)
 > >
 > > string_machine('et cetera', 10)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}

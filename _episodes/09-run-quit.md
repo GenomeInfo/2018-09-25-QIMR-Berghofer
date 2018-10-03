@@ -36,7 +36,7 @@ keypoints:
     2 + 2
     exit()
     ~~~
-    {: .python}
+    {: .language-python}
 
 ### With enhanced IPython shell
 

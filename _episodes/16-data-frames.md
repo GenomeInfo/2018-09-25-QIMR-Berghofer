@@ -25,7 +25,7 @@ keypoints:
 data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 print(data.iloc[0, 0])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1601.056136
 ~~~
@@ -39,7 +39,7 @@ print(data.iloc[0, 0])
 data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 print(data.loc["Albania", "gdpPercap_1952"])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1601.056136
 ~~~
@@ -51,7 +51,7 @@ print(data.loc["Albania", "gdpPercap_1952"])
 ~~~
 print(data.loc["Albania", :])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 gdpPercap_1952    1601.056136
 gdpPercap_1957    1942.284244
@@ -74,7 +74,7 @@ Name: Albania, dtype: float64
 ~~~
 print(data.loc[:, "gdpPercap_1952"])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 country
 Albania                    1601.056136
@@ -96,7 +96,7 @@ Name: gdpPercap_1952, dtype: float64
 ~~~
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
              gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
 country
@@ -123,7 +123,7 @@ everything up to but not including the final index.
 ~~~
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 gdpPercap_1962    13450.40151
 gdpPercap_1967    16361.87647
@@ -135,7 +135,7 @@ dtype: float64
 ~~~
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 gdpPercap_1962    4649.593785
 gdpPercap_1967    5907.850937
@@ -157,7 +157,7 @@ print('Subset of data:\n', subset)
 # Which values were greater than 10000 ?
 print('\nWhere are values large?\n', subset > 10000)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Subset of data:
              gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
@@ -187,7 +187,7 @@ Poland               False          False          False
 mask = subset > 10000
 print(subset[mask])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
              gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
 country
@@ -205,7 +205,7 @@ Poland                  NaN             NaN             NaN
 ~~~
 print(subset[subset > 10000].describe())
 ~~~
-{: .python}
+{: .language-python}
 ~~~
        gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
 count        2.000000        3.000000        3.000000
@@ -229,7 +229,7 @@ max      13450.401510    16361.876470    18965.055510
 >
 > df = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Write an expression to find the Per Capita GDP of Serbia in 2007.
 > > ## Solution
@@ -237,7 +237,7 @@ max      13450.401510    16361.876470    18965.055510
 > > ~~~
 > > print(df.loc['Serbia', 'gdpPercap_2007'])
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -251,14 +251,14 @@ max      13450.401510    16361.876470    18965.055510
 > print(data.iloc[0:2, 0:2])
 > print(data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > No, They do not produce the same output
 > >
 > > ~~~
 > > print(data.iloc[0:2, 0:2])
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > ~~~
 > >          gdpPercap_1952  gdpPercap_1957
 > > country                                
@@ -269,7 +269,7 @@ max      13450.401510    16361.876470    18965.055510
 > > ~~~
 > > print(data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > ~~~
 > >          gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
 > > country                                                
@@ -296,32 +296,32 @@ max      13450.401510    16361.876470    18965.055510
 > fourth = third.drop('continent', axis = 1)
 > fourth.to_csv('result.csv')
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > ~~~
 > > first = pandas.read_csv('data/gapminder_all.csv', index_col='country')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > This creates a new DataFrame named `first` and reads the contents of the file `data/gapminder_all.csv` into it, using the `country` column to index the values.
 > > ~~~
 > > second = first[first['continent'] == 'Americas']
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > This line makes a selection: only those rows of the DataFrame, `first`, for which the `‘continent’` column matches `‘Americas’` are extracted. Notice how the Boolean expression inside the brackets, `first['continent'] == 'Americas'`, is used to select only those rows where the expression is true. Try printing this expression! Can you print also its individual True/False elements? (hint: first assign the expression to a variable)
 > > ~~~
 > > third = second.drop('Puerto Rico')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > This creates a new DataFrame named `third` which is a copy of `second`, but with the row indexed by the country `Puerto Rico` excluded or "dropped".  When using `DataFrame.drop`, there is an optional argument, `axis` that indicates whether you are dropping a row or a column.  If you do not provide it, the function presumes you want to drop a row.
 > > ~~~
 > > fourth = third.drop('continent', axis = 1)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > This creates a new DataFrame names `fourth` which is a copy of `third`, but with the column indexed by the name `continent` excluded or "dropped".  Unlike the previous example, where the row was dropped, the `axis = 1` is required to indicate that a column should be dropped.
 > > ~~~
 > > fourth.to_csv('result.csv')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > This writes the contents of the DataFrame `fourth` oout to a file named `result.csv`.  As no path was given, it will write the file to the current working directory.
 > {: .solution}
 {: .challenge}
@@ -336,7 +336,7 @@ max      13450.401510    16361.876470    18965.055510
 > print(data.idxmin())
 > print(data.idxmax())
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > `data.idxmin` returns the index of the each of the rows that has the lowest value in each of the colums of the DataFrame `data`.  `data.idxmax` returns the index of the each of the rows that has the highest value in each of the colums of the DataFrame `data`.  
 > >   
@@ -360,19 +360,19 @@ max      13450.401510    16361.876470    18965.055510
 > > ~~~
 > > data.loc[:, 'gdpPercap_1982']
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > ><br>
 > > GDP per capita for Denmark for all years.
 > > ~~~
 > > data.loc['Denmark', :]
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > ><br>
 > > GDP per capita for all countries for years *after* 1985.
 > > ~~~
 > > data.loc[:, 'gdpPercap_1985':]
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named `gdpPercap_1985` actually exists. This is useful if new columns are added to the CSV file later.
 > ><br>
 > > GDP per capita for each country in 2007 as a multiple of  
@@ -380,7 +380,7 @@ max      13450.401510    16361.876470    18965.055510
 > > ~~~
 > > data.loc[:, 'gdpPercap_2007'] / data[:, 'gdpPercap_1952']
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 

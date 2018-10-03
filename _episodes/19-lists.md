@@ -33,7 +33,7 @@ pressures = [0.273, 0.275, 0.277, 0.275, 0.276]
 print('pressures:', pressures)
 print('length:', len(pressures))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 pressures: [0.273, 0.275, 0.277, 0.275, 0.276]
 length: 5
@@ -48,7 +48,7 @@ length: 5
 print('zeroth item of pressures:', pressures[0])
 print('fourth item of pressures:', pressures[4])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 zeroth item of pressures: 0.273
 fourth item of pressures: 0.276
@@ -63,7 +63,7 @@ fourth item of pressures: 0.276
 pressures[0] = 0.265
 print('pressures is now:', pressures)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 pressures is now: [0.265, 0.275, 0.277, 0.275, 0.276]
 ~~~
@@ -80,7 +80,7 @@ primes.append(7)
 primes.append(9)
 print('primes has become:', primes)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 primes is initially: [2, 3, 5]
 primes has become: [2, 3, 5, 7, 9]
@@ -104,7 +104,7 @@ print('primes has now become:', primes)
 primes.append(middle_aged_primes)
 print('primes has finally become:', primes)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 primes is currently: [2, 3, 5, 7, 9]
 primes has now become: [2, 3, 5, 7, 9, 11, 13, 17, 19]
@@ -124,7 +124,7 @@ print('primes before removing last item:', primes)
 del primes[4]
 print('primes after removing last item:', primes)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 primes before removing last item: [2, 3, 5, 7, 9]
 primes after removing last item: [2, 3, 5, 7]
@@ -145,7 +145,7 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
-{: .python}
+{: .language-python}
 
 ## Character strings can be indexed like lists.
 
@@ -156,7 +156,7 @@ element = 'carbon'
 print('zeroth character:', element[0])
 print('third character:', element[3])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 zeroth character: c
 third character: b
@@ -174,7 +174,7 @@ third character: b
 ~~~
 element[0] = 'C'
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 TypeError: 'str' object does not support item assignment
 ~~~
@@ -192,7 +192,7 @@ TypeError: 'str' object does not support item assignment
 ~~~
 print('99th element of element is:', element[99])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 IndexError: string index out of range
 ~~~
@@ -211,7 +211,7 @@ IndexError: string index out of range
 > values = values[____]
 > print('second time:', values)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > first time: [1, 3, 5]
@@ -234,7 +234,7 @@ IndexError: string index out of range
 > print('string to list:', list('tin'))
 > print('list to string:', ''.join(['g', 'o', 'l', 'd']))
 > ~~~
-> {: .python}
+> {: .language-python}
 > ~~~
 > ['t', 'i', 'n']
 > 'gold'
@@ -253,7 +253,7 @@ IndexError: string index out of range
 > element = 'helium'
 > print(element[-1])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1.  How does Python interpret a negative index?
 > 2.  If a list or string has N elements,
@@ -273,7 +273,7 @@ IndexError: string index out of range
 > print(element[::2])
 > print(element[::-1])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1.  If we write a slice as `low:high:stride`, what does `stride` do?
 > 2.  What expression would select all of the even-numbered items from a collection?
@@ -288,7 +288,7 @@ IndexError: string index out of range
 > print(element[0:20])
 > print(element[-1:3])
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Sort and Sorted
@@ -302,7 +302,7 @@ IndexError: string index out of range
 > result = sorted(letters)
 > print('letters is', letters, 'and result is', result)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > # Program B
@@ -310,7 +310,7 @@ IndexError: string index out of range
 > result = letters.sort()
 > print('letters is', letters, 'and result is', result)
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Copying (or Not)
@@ -325,7 +325,7 @@ IndexError: string index out of range
 > new[0] = 'D'
 > print('new is', new, 'and old is', old)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > # Program B
@@ -334,5 +334,5 @@ IndexError: string index out of range
 > new[0] = 'D'
 > print('new is', new, 'and old is', old)
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}

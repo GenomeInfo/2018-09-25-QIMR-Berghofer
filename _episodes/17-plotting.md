@@ -21,14 +21,14 @@ keypoints:
 ~~~
 import matplotlib.pyplot as plt
 ~~~
-{: .python}
+{: .language-python}
 
 *   If you're using `ipython` and want to see plots appear as you create them you can use the 'magic' command:
 
 ~~~
 %matplotlib tk
 ~~~
-{: .python}
+{: .language-python}
 
 *   Otherwise you'll need to use `plt.show()` after creating each plot.
 
@@ -42,8 +42,9 @@ plt.plot(x, y)
 plt.xlabel('Numbers')
 plt.ylabel('Doubles')
 ~~~
-{: .python}
+{: .language-python}
 
+![Simple Position-Time Plot](../fig/17_simple_numbers_doubles_plot.png)
 ## Plot data directly from a Pandas dataframe.
 
 *   We can also plot Pandas dataframes.
@@ -56,7 +57,7 @@ data = pandas.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
 data.loc['Australia'].plot()
 plt.xticks(rotation=90)
 ~~~
-{: .python}
+{: .language-python}
 
 ## Select and transform data, then plot it.
 
@@ -68,7 +69,7 @@ data.T.plot()
 plt.ylabel('GDP per capita')
 plt.xticks(rotation=90)
 ~~~
-{: .python}
+{: .language-python}
 
 ## Many styles of plot are available.
 
@@ -80,7 +81,7 @@ data.T.plot(kind='bar')
 plt.xticks(rotation=90)
 plt.ylabel('GDP per capita')
 ~~~
-{: .python}
+{: .language-python}
 
 *   Extract years from the last four characters of the columns' names.
     *   Store these in a list using the Accumulator pattern.
@@ -99,7 +100,7 @@ gdp_australia = data.loc['Australia'].tolist()
 # Plot: 'b-' sets the line style.
 plt.plot(years, gdp_australia, 'b-')
 ~~~
-{: .python}
+{: .language-python}
 
 ## Can plot many sets of data together.
 
@@ -123,7 +124,7 @@ plt.legend(loc='upper left')
 plt.xlabel('Year')
 plt.ylabel('GDP per capita ($)')
 ~~~
-{: .python}
+{: .language-python}
 
 *   Plot a scatter plot correlating the GDP of Australia and New Zealand
 *   Use either `plt.scatter` or `DataFrame.plot.scatter`
@@ -131,12 +132,12 @@ plt.ylabel('GDP per capita ($)')
 ~~~
 plt.scatter(gdp_australia, gdp_nz)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 ~~~
-{: .python}
+{: .language-python}
 
 > ## Minima and Maxima
 >
@@ -150,7 +151,19 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > data_europe.____
 > plt.legend(loc='best')
 > ~~~
-> {: .python}
+> {: .language-python}
+>
+> > ## Solution
+> >
+> > ~~~
+> > data_europe = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+> > data_europe.min().plot(label='min')
+> > data_europe.max().plot(label='max')
+> > plt.legend(loc='best')
+> > plt.xticks(rotation=90)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
 {: .challenge}
 
 > ## Correlations
@@ -161,21 +174,21 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > What relationship do you see (if any)?
 >
 > ~~~
-> data_asia = pandas.read_csv('gapminder_gdp_asia.csv')
+> data_asia = pandas.read_csv('data/gapminder_gdp_asia.csv')
 > data_asia.describe().T.plot(kind='scatter', x='min', y='max')
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > You might note that the variability in the maximum is much higher than
 > that of the minimum.  Take a look at the maximum and the max indexes:
 >
 > ~~~
-> data_asia = pandas.read_csv('gapminder_gdp_asia.csv')
+> data_asia = pandas.read_csv('data/gapminder_gdp_asia.csv')
 > data_asia.max().plot()
 > print(data_asia.idxmax())
 > print(data_asia.idxmin())
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## More Correlations
@@ -185,12 +198,27 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > normalizing marker size by population:
 >
 > ~~~
-> data_all = pandas.read_csv('gapminder_all.csv')
+> data_all = pandas.read_csv('data/gapminder_all.csv')
 > data_all.plot(kind='scatter', x='gdpPercap_2007', y='lifeExp_2007',
 >               s=data_all['pop_2007']/1e6)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Using online help and other resources,
 > explain what each argument to `plot` does.
+>
+> > ## Solution
+> > A good place to look is the documentation for the plot function -
+> > help(data_all.plot).
+> >
+> > kind - As seen already this determines the kind of plot to be drawn.
+> >
+> > x and y - A column name or index that determines what data will be
+> > placed on the x and y axes of the plot
+> >
+> > s - Details for this can be found in the documentation of plt.scatter.
+> > A single number or one value for each data point. Determines the size
+> > of the plotted points.
+> >
+> {: .solution}
 {: .challenge}
