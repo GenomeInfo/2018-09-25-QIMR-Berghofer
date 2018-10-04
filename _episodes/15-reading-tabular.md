@@ -33,7 +33,7 @@ import pandas
 data = pandas.read_csv('data/gapminder_gdp_oceania.csv')
 print(data)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
        country  gdpPercap_1952       ...        gdpPercap_2002  gdpPercap_2007
 0    Australia     10039.59564       ...           30687.75473     34435.36744
@@ -72,7 +72,7 @@ print(data)
 data = pandas.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
 print(data)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
              gdpPercap_1952       ...        gdpPercap_2007
 country                           ...                      
@@ -88,7 +88,7 @@ New Zealand     10556.57566       ...           25185.00911
 ~~~
 data.info()
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 <class 'pandas.core.frame.DataFrame'>
 Index: 2 entries, Australia to New Zealand
@@ -126,7 +126,7 @@ memory usage: 208.0+ bytes
 ~~~
 print(data.columns)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
        'gdpPercap_1972', 'gdpPercap_1977', 'gdpPercap_1982', 'gdpPercap_1987',
@@ -144,7 +144,7 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
 ~~~
 print(data.T)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 country           Australia  New Zealand
 gdpPercap_1952  10039.59564  10556.57566
@@ -169,7 +169,7 @@ All other columns are ignored, unless you use the argument `include='all'`.
 ~~~
 print(data.describe())
 ~~~
-{: .python}
+{: .language-python}
 ~~~
        gdpPercap_1952       ...        gdpPercap_2007
 count        2.000000       ...              2.000000
@@ -201,7 +201,7 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > americas = pandas.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -225,7 +225,7 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > americas.head(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > 
 > > The output is then
 > > ~~~
@@ -262,13 +262,13 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > americas_flipped = americas.T
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > >
 > > We can then view the last three columns of `americas` by viewing the last three rows of `americas_flipped`:
 > > ~~~
 > > americas_flipped.tail(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > The output is then
 > > ~~~
 > > country        Argentina  Bolivia   Brazil   Canada    Chile Colombia  \
@@ -296,7 +296,7 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > americas.T.tail(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -325,7 +325,7 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > data_microbes = pandas.read_csv('../field_data/microbes.csv')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -341,12 +341,12 @@ max      10556.575660       ...          34435.367440
 > > ~~~
 > > americas.to_csv('processed.csv')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > For help on `to_csv`, you could execute, for example,
 > > ~~~
 > > help(americas.to_csv)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > Note that `help(to_csv)` throws an error! This is a subtlety and is due to the fact that `to_csv` is NOT a function in 
 > > and of itself and the actual call is `americas.to_csv`. 
 > > 
