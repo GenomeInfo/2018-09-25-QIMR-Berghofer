@@ -75,7 +75,7 @@ $ ssh -Y scottW@hpcpbs01.adqimr.ad.lan
 
 *   Obtain an interactive session on the HPC cluster:
     ~~~
-    qsub -X -I -q training -l walltime=8:00:00 -l ncpus=1 -l mem=1G
+    qsub -X -I -l walltime=8:00:00 -l ncpus=1 -l mem=1G
     ~~~
 
 > ## Preparation Magic
