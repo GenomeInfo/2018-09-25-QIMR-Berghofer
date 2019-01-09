@@ -19,7 +19,7 @@ keypoints:
 
 *   Obtain an interactive session on the HPC cluster:
     ~~~
-    qsub -X -I -q training -l walltime=8:00:00 -l ncpus=1 -l mem=1G
+    qsub -X -I -l walltime=8:00:00 -l ncpus=1 -l mem=1G
     ~~~
 *   Once you're in, load the latest Python 3 environment:
     ~~~
